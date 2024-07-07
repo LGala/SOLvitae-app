@@ -181,6 +181,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mantine/dates@npm:^7.11.1":
+  version: 7.11.1
+  resolution: "@mantine/dates@npm:7.11.1"
+  dependencies:
+    clsx: "npm:^2.1.1"
+  peerDependencies:
+    "@mantine/core": 7.11.1
+    "@mantine/hooks": 7.11.1
+    dayjs: ">=1.0.0"
+    react: ^18.2.0
+    react-dom: ^18.2.0
+  checksum: 10c0/ad3a36f016822ae27d1fdb0bb3e7a7c6641fa2ca27ff2c86c88d0d54d2ff460a759584de9498558fd9207affa0eb99057d0976e31b810ea04587b70dc5a25382
+  languageName: node
+  linkType: hard
+
 "@mantine/hooks@npm:7.11.1":
   version: 7.11.1
   resolution: "@mantine/hooks@npm:7.11.1"
@@ -884,6 +899,13 @@ __metadata:
   version: 1.0.8
   resolution: "damerau-levenshtein@npm:1.0.8"
   checksum: 10c0/4c2647e0f42acaee7d068756c1d396e296c3556f9c8314bac1ac63ffb236217ef0e7e58602b18bb2173deec7ec8e0cac8e27cccf8f5526666b4ff11a13ad54a3
+  languageName: node
+  linkType: hard
+
+"dayjs@npm:^1.11.11":
+  version: 1.11.11
+  resolution: "dayjs@npm:1.11.11"
+  checksum: 10c0/0131d10516b9945f05a57e13f4af49a6814de5573a494824e103131a3bbe4cc470b1aefe8e17e51f9a478a22cd116084be1ee5725cedb66ec4c3f9091202dc4b
   languageName: node
   linkType: hard
 
@@ -2458,10 +2480,12 @@ __metadata:
   resolution: "mantine-minimal-next-template@workspace:."
   dependencies:
     "@mantine/core": "npm:7.11.1"
+    "@mantine/dates": "npm:^7.11.1"
     "@mantine/hooks": "npm:7.11.1"
     "@types/node": "npm:20.14.8"
     "@types/react": "npm:18.3.3"
     "@types/react-dom": "npm:18.3.0"
+    dayjs: "npm:^1.11.11"
     eslint: "npm:8.57.0"
     eslint-config-next: "npm:14.2.4"
     next: "npm:14.2.4"

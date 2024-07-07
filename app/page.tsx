@@ -1,17 +1,25 @@
 "use client";
 import {
-  Box,
   Button,
-  Center,
   Container,
-  Flex,
   Loader,
-  NumberInput,
+  Select,
   TextInput,
   Title,
 } from "@mantine/core";
 import { useState } from "react";
 import { createResume, uploadResume } from "./handler";
+import { DateInput } from "@mantine/dates";
+
+export interface ResumeData {
+  companyName: string;
+  contractType: string;
+  roleStartedDate: string;
+  roleEndedDate: string;
+  workModel: string;
+  jobPosition: string;
+  jobPositionDescription: string;
+}
 
 export default function HomePage() {
   const [isFirstPage, setIsFirstPage] = useState(true);
@@ -39,17 +47,62 @@ export default function HomePage() {
   function SecondPage() {
     return isSecondPage ? (
       <form
-        onSubmit={async () => {
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "15px",
+        }}
+        onSubmit={async (e) => {
+          e.preventDefault();
+          const formData: any = Object.fromEntries(
+            new FormData(e.target as HTMLFormElement)
+          );
           setIsSecondPage(false);
           setIsLoading(true);
-          await uploadResume();
+          await uploadResume(formData);
           setIsLoading(false);
           setIsThirdPage(true);
         }}
       >
-        <TextInput label="Name" placeholder="Name" />
-        <TextInput mt="sm" label="Email" placeholder="Email" />
-        <NumberInput mt="sm" label="Age" placeholder="Age" min={0} max={99} />
+        <TextInput
+          name="companyName"
+          label="Company name"
+          placeholder="Company name"
+        />
+        <Select
+          name="contractType"
+          label="Contract type"
+          placeholder="Contract type"
+          data={["full-time", "contractor", "part-time"]}
+        />
+        <DateInput
+          name="roleStartedDate"
+          valueFormat="DD MMM YYYY"
+          label="Role started"
+          placeholder="Role started"
+        />
+        <DateInput
+          name="roleEndedDate"
+          valueFormat="DD MMM YYYY"
+          label="Role ended"
+          placeholder="Role ended"
+        />
+        <Select
+          name="workModel"
+          label="Work model"
+          placeholder="Work model"
+          data={["onsite", "hybrid", "remote"]}
+        />
+        <TextInput
+          name="jobPosition"
+          label="Job position"
+          placeholder="Job position"
+        />
+        <TextInput
+          name="jobPositionDescription"
+          label="Job position description"
+          placeholder="Job position description"
+        />
         <Container
           style={{
             display: "flex",

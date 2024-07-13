@@ -10,6 +10,7 @@ import {
 import { useState } from "react";
 import { createResume, uploadResume } from "./handler";
 import { DateInput } from "@mantine/dates";
+import "@mantine/dates/styles.css";
 
 export interface ResumeData {
   companyName: string;

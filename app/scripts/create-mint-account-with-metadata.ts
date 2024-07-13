@@ -251,14 +251,14 @@ export async function createMintAccountWithMetadata(companyName: string, contrac
 
     console.log(
         "\nTransaction Signature:",
-        `https://solana.fm/tx/${transactionSignature}?cluster=devnet`
+        `https://solana.fm/tx/${transactionSignature}?cluster=devnet-solana`
     );
     // Last test, SOLVITAE tx signature:
     // Transaction Signature: https://solana.fm/tx/418HMK9oNavdpnQP8W8QfwqCrofyXE5nWXamP9mQSy8BmXXrxXkUk863HvokCpkMnJ6XRzLoEBNCoHpNvYsrKkGs?cluster=devnet
 
     console.log(
         "\nToken Account: ",
-        `https://solana.fm/address/${tokenAccount.address}?cluster=devnet`
+        `https://solana.fm/address/${tokenAccount.address}?cluster=devnet-solana`
     );
     // Last test, SOLVITAE Token Account:
     // Token Account:  https://solana.fm/address/ER6krr9s3h9zt33bAchR3mQXry31cZVQwsnXfDYHu64w?cluster=devnet

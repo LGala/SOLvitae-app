@@ -26,7 +26,7 @@ import {
 import payerWalletSecretKey from "../../wallets/payer-secret-key.json";
 
 
-export async function createMintAccountWithMetadata(companyName: string, contractType: string, roleStart: string, roleEnd: string, workModel: string, jobPosition: string, jobPositionDescription: string) {
+export async function createMintAccountWithMetadataAndMintNFT(companyName: string, contractType: string, roleStart: string, roleEnd: string, workModel: string, jobPosition: string, jobPositionDescription: string) {
     const payer = Keypair.fromSecretKey(new Uint8Array(payerWalletSecretKey));
 
     // Connection to devnet cluster
@@ -250,7 +250,7 @@ export async function createMintAccountWithMetadata(companyName: string, contrac
     );
 
     console.log(
-        "\nTransaction Signature:",
+        "\nTransaction Signature of Token Account creation:",
         `https://solana.fm/tx/${transactionSignature}?cluster=devnet-solana`
     );
     // Last test, SOLVITAE tx signature:
@@ -262,4 +262,5 @@ export async function createMintAccountWithMetadata(companyName: string, contrac
     );
     // Last test, SOLVITAE Token Account:
     // Token Account:  https://solana.fm/address/ER6krr9s3h9zt33bAchR3mQXry31cZVQwsnXfDYHu64w?cluster=devnet
+    console.log("dNFT created, happy coding!")
 }
